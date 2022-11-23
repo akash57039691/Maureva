@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -62,6 +63,11 @@ public class FlightServiceImpl implements FlightService {
         } catch (UnmarshalException unmarshalException) {
             throw new UnmarshalException("Failed to convert XML.");
         }
+    }
+
+    @Override
+    public Optional<Flight> findById(Long flightId) {
+        return flightRepository.findById(flightId);
     }
 
     private File convertToFile(MultipartFile multipartFile) throws IOException {
