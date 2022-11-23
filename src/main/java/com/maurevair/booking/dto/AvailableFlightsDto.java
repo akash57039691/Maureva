@@ -7,6 +7,7 @@ import java.util.List;
 
 @Data
 public class AvailableFlightsDto {
+    private Long id;
     private String flightId;
     private String carrier;
     private Long flightNumber;

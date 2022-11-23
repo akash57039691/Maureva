@@ -36,12 +36,12 @@ public class UserBookingServiceImpl implements UserBookingService {
 
         if (flight.isPresent() && user.isPresent() && booking.isPresent()) {
             UserBooking userBooking = new UserBooking();
-            userBooking.setBookingId(userBooking.getBookingId());
-            userBooking.setUserId(userBooking.getUserId());
-            userBooking.setFlightId(userBooking.getFlightId());
+            userBooking.setBookingId(userBookingDto.getBookingId());
+            userBooking.setUserId(userBookingDto.getUserId());
+            userBooking.setFlightId(userBookingDto.getFlightId());
             userBookingRepository.save(userBooking);
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cannot save.");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
 }
