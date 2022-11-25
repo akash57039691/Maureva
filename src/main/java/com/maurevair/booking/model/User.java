@@ -32,6 +32,9 @@ public class User {
     @Column(name = "USERNAME", nullable = false)
     private String username;
 
+    @Column(name = "PASSWORD", nullable = false)
+    private String password;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "airport")
     private List<Flight> flightList;
 }
