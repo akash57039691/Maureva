@@ -30,32 +30,32 @@ Retrieve the token and putting "Authorization: Bearer "Token"" in the header for
 
 1) Upload airports (Postman -> Body -> form-data, key: file, value: airport_info.csv):
 ```
-http://localhost:8080/api/airline/upload/airport
+POST http://localhost:8080/api/airline/upload/airport
 ```
 
 2) Upload flights (Postman -> Body -> form-data, key: file, value: flight.xml):
 ```
-http://localhost:8080/api/airline/upload/flight
+POST http://localhost:8080/api/airline/upload/flight
 ```
 
 3) List all the airports and their details.
 ```
-http://localhost:8080/api/airline/list/airport
+GET http://localhost:8080/api/airline/list/airport
 ```
 
 4) List a specific airport along with their details.
 ```
-http://localhost:8080/api/airline/list/airport/{id}
+GET http://localhost:8080/api/airline/list/airport/{id}
 ```
 
 5) List all available flights between an origin and a destination, as well as their details (seats available).
 ```
-http://localhost:8080/api/airline/list/flight/available
+GET http://localhost:8080/api/airline/list/flight/available
 ```
 
 6) Based on step 4, a user shall be able to make the necessary reservation.
 ```
-http://localhost:8080/api/user-booking/save
+POST http://localhost:8080/api/user-booking/save
 ```
 Body:
 ``` json
