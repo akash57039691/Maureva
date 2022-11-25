@@ -13,7 +13,7 @@ Building + Running the app
 2nd step: Run the application and run this API first to save the user (excluded from Authentication)
 
 ```
-http://localhost:8080/api/user-booking/save
+http://localhost:8080/api/airline/save-user
 ```
 
 3rd step: Authentication
