@@ -31,6 +31,4 @@ public class Airport {
     private String city;
     @Column(name = "AIRPORT_CODE", nullable = false)
     private String airportCode;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "airport")
-    private List<Flight> flightList;
 }

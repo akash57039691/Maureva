@@ -1,7 +1,6 @@
 package com.maurevair.booking.service;
 
 import com.maurevair.booking.dto.AirportOnlyDto;
-import com.maurevair.booking.dto.AvailableFlightsDto;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -14,6 +13,4 @@ public interface AirportService {
     List<AirportOnlyDto> findListOfAirport();
 
     AirportOnlyDto findById(Long id);
-
-    List<AvailableFlightsDto> findAvailableFlight();
 }

@@ -54,6 +54,6 @@ public class AirlineController {
 
     @GetMapping(value = "list/flight/available")
     public ResponseEntity<List<AvailableFlightsDto>> getAvailableFlights() {
-        return ResponseEntity.ok(airportService.findAvailableFlight());
+        return ResponseEntity.ok(flightService.findAvailableFlight());
     }
 }

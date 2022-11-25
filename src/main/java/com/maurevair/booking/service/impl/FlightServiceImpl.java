@@ -1,5 +1,7 @@
 package com.maurevair.booking.service.impl;
 
+import com.maurevair.booking.dto.AvailableFlightsDto;
+import com.maurevair.booking.mapper.FlightMapper;
 import com.maurevair.booking.model.Booking;
 import com.maurevair.booking.model.Flight;
 import com.maurevair.booking.repository.AirportRepository;
@@ -28,11 +30,13 @@ public class FlightServiceImpl implements FlightService {
 
     private final FlightRepository flightRepository;
     private final AirportRepository airportRepository;
+    private final FlightMapper flightMapper;
 
     public FlightServiceImpl(FlightRepository flightRepository,
-            AirportRepository airportRepository) {
+            AirportRepository airportRepository, FlightMapper flightMapper) {
         this.flightRepository = flightRepository;
         this.airportRepository = airportRepository;
+        this.flightMapper = flightMapper;
     }
 
     @Override
@@ -68,6 +72,11 @@ public class FlightServiceImpl implements FlightService {
     @Override
     public Optional<Flight> findById(Long flightId) {
         return flightRepository.findById(flightId);
+    }
+
+    @Override
+    public List<AvailableFlightsDto> findAvailableFlight() {
+        return flightMapper.convertAvailableFlights(flightRepository.findAvailableFlights());
     }
 
     private File convertToFile(MultipartFile multipartFile) throws IOException {

@@ -18,6 +18,8 @@ POST http://localhost:8080/api/airline/save-user
 
 3rd step: Authentication
 
+You need to create a database name "airline".
+
 I have set only 1 user.
 
 Username: maureva
@@ -28,7 +30,8 @@ Do a post request on http://localhost:8080/api/authenticate with above user.
 
 Retrieve the token and putting "Authorization: Bearer "Token"" in the header for every request.
 
-NOTE: Please use the airport.csv and flight.xml from the folder data found in the application.
+NOTE: Please use the airport.csv and flight.xml from the folder data found in the application. I have linked airport 
+to flight with origin and airportCode.
 1) Upload airports (Postman -> Body -> form-data, key: file, value: airport_info.csv):
 ```
 POST http://localhost:8080/api/airline/upload/airport
