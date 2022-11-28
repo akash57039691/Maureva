@@ -19,7 +19,7 @@ public class UserBookingController {
     }
 
     @PostMapping(value = "save")
-    public ResponseEntity<String> uploadFlight(@RequestBody UserBookingDto userBookingDto) {
+    public ResponseEntity<String> bookFlight(@RequestBody UserBookingDto userBookingDto) {
         userBookingService.bookFlight(userBookingDto);
         return ResponseEntity.ok("Booking save.");
     }
